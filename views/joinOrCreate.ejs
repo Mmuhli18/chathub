@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="style.css">
+        
+        <title> Chathub: Join or create a room</title>
+    </header>
+
+    <body>
+        <H1>Would you like to join a room or create your own?</H1>
+        <form action="/join" method = "post">
+            <button class = "joinRoomButton presseable"  id ="joinRoomButton"> Join room</button>
+            <textarea id= "name" name = "name" style="visibility: hidden;"><%= data.name %></textarea>
+        </form>
+        <form action="/create" method = "post">
+            <button class = "creatRoomButton presseable"  id ="createRoomButton"  onclick="createRoom ()">create room</button>
+            <textarea id= "name" name = "name" style="visibility: hidden;"><%= data.name %></textarea>
+        </form>
+    </body>
+    <script>
+    </script>
+</html>

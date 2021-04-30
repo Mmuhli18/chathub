@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="style.css">
+        <title> Chathub: Make room key</title>
+    </header>
+
+    <body>
+        <H1>Your roomkey is: <%= id %></H1>
+
+        <form action="/joinroom" method = "post">
+            <label for="roomkey"></label>
+            <input type="submit" class="presseable"  value="Submit room key" >
+            <br>
+            <textarea id= "name" name = "name" style="visibility: hidden;"><%= data.name %></textarea>
+            <textarea id= "roomkey" name = "roomkey" style="visibility: hidden;"><%= id %></textarea>
+        </form>
+    </body>
+</html>

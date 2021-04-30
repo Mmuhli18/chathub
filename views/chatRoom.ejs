@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <header> 
+        <link rel="stylesheet" href="chatRoomStyle.css">
+        <title>Chathub : Chat</title>
+    </header>
+
+    <body>
+        <div id="chat-container">
+            
+            <div id = "Active-conversations-container">
+                <p>Active conversation: </p>
+            </div> 
+            <div id = "conversation-list">
+                <div class="conversation ">
+                    <div class =title-text>
+                        <p> RomKey: <p> <%=data.id%> </p> </p> <!--Insert code from ejs on XXX should be the room key for a room the user is part of-->
+                    </div>
+                    <div class="created-date">
+                       
+                    </div>
+                    <div class="converation-message">
+                       
+                    </div>
+                </div>
+            </div>
+            <div id = "new-message-container">
+                <a>+</a> 
+            </div>
+            <div id = "chat-title"> 
+                <p>Roomkey: <span class= "rKey"> <%=data.id%> </span> </p> <!--Insert code from ejs on XXX should be the room key for the room the user i currently in -->
+            </div>
+                    <div id = "chat-message-list">
+                        <div class="message-row you-message " >
+                            <div class="message-content">
+                                <% if (data.messages.length > 0) { %>
+                                    <% data.messages.forEach(message => { %>
+                                            <div class="message-row you-message">
+                                                <div class="message-content">
+                                                    <div class="message-text">
+                                                        <p><%=message.user%>: <%=message.message%></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <% }) %>
+                                <% } %>
+                                <!-- <div class="message-time"> <p>XXX</p></div> --> <!--Insert code from ejs on XXX, the original idea is that the time from the last send message should go here, howevere if that is to complicated, it can just as easy be the name of the user-->
+                            </div>
+
+                        </div>
+                            <div class="message-row other-message">
+                                <div class="message-content">
+
+                                </div>
+                            </div>
+                    </div>
+                    <div id = "chat-form">
+                        <button type="button" class = "presseable" onclick= "post()" >Send</button> <!--There should be added an onClick fundtion of some sort, that takes the input that is in the text beneith and send that as a message-->
+                        <input type="text" id="message" placeholder="Press to type..."> 
+                        
+
+                    </div>
+        </div>
+        <textarea id= "code" style="visibility: hidden;"><%= data.id %></textarea>
+        <textarea id = "name" style="visibility: hidden;"><%= name.name %></textarea>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script>
+            function post(){
+                let name = document.getElementById("name").value;
+                let message = document.getElementById("message").value;
+                let id = document.getElementById("code").value;
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3000/room',
+                    dataType: 'json',
+                    data: {"id": id ,"message": message, "name": name}
+                })
+                .done(function(response){
+                    console.log("Response of update: ",response);
+                    window.location = "localhost:3000/room";
+                })
+                .fail((err)=>{
+                    console.log("error: ",err);
+                    location.reload();
+                })
+            }
+            function newChat(){
+                window.location = "localhost:3000/";
+            }
+        </script>
+    </body>
+
+</html> 

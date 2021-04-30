@@ -1,0 +1,150 @@
+
+
+html{
+  background: linear-gradient(to left, orange 0%, rgb(255, 208, 119) 100%);
+}
+
+body {
+    text-align: center;
+}
+
+h1
+{
+    font-size: 500%;
+    margin: 0%;
+    padding: 0%;
+}
+
+h3
+{
+    font-size: 300%;
+    margin: 2%;
+    padding: 0%;
+}
+
+input 
+{
+    background-color: rgb(255, 208, 119);
+}
+
+input[type=text] 
+{
+    font-size: 100%;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+}
+
+input[type=submit] 
+{
+    font-size: 100%;
+    font-weight: bolder;
+    padding: 12px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid black;
+    position: relative;
+    
+}
+
+button
+{
+    font-size: 100%;
+    font-weight: bolder;
+    padding: 12px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+
+.sendMsgbtr
+{
+    position: relative;
+    bottom: 20px;
+}
+.presseable
+{
+    background-color: rgb(255, 208, 119);
+    cursor: pointer;
+}
+
+.presseable:hover
+{
+    background-color: rgb(248, 222, 175);
+}
+textarea 
+{
+    background-color: rgb(255, 208, 119); 
+    resize: none; /* This makes the user not able to change the size of the textsarea  */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ Popup container 
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+   The actual popup (appears on top) 
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+   Popup arrow 
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+   Toggle this class when clicking on the popup container (hide and show the popup) 
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+   Add animation (fade in the popup) 
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+*/
